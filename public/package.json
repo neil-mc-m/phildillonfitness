@@ -1,0 +1,31 @@
+{
+  "name": "phildillonfitness",
+  "version": "1.0.0",
+  "description": "website frontend dependencies for my phildillonfitness",
+  "main": "gruntfile.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/studentneil/phildillonfitness.git"
+  },
+  "keywords": [
+    "phildillonfitness",
+    "website"
+  ],
+  "author": "neil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/studentneil/phildillonfitness/issues"
+  },
+  "homepage": "https://github.com/studentneil/phildillonfitness#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-autoprefixer": "^3.0.4",
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-contrib-imagemin": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "mixitup": "^3.1.2"
+  }
+}
