@@ -51,7 +51,11 @@ $(document).ready(function(){
                 clear: 'fa fa-trash',
                 close: 'fa fa-remove'
             },
-            debug: true
+            debug: true,
+            // focusOnShow: false,
+            format: 'dddd, MMMM Do YYYY, h:mm a',
+            ignoreReadonly: true,
+            allowInputToggle: true
         });
     };
 
