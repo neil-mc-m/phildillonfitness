@@ -21,7 +21,7 @@ module.exports = function(grunt) {
             dev: {
                 bsFiles: {
                     src: ["css/main.css",
-                        "/resources/views/*.twig",
+                        "../resources/views/*.twig",
                         // "../templates/backend/*.html.twig",
                         // "../templates/frontend/partials/*.html.twig",
                         // "../templates/backend/partials/*.html.twig"
