@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('hello');
 });
+
+Route::get('/pricing', function () {
+    return view('pricing');
+});

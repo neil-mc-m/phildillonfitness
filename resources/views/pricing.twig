@@ -1,0 +1,128 @@
+{% extends 'base.twig' %}
+{% block description %}{% endblock %}
+{% block title %}{% endblock %}
+{% block content %}
+    {% include 'navbar.twig' %}
+
+    <div class="page-header page-header-small" style="background-image: url('/img/phil_2.jpg');">
+        <div class="filter"></div>
+        <div class="container">
+            <div class="motto text-center">
+                <h1>Phil Dillon Fitness</h1>
+                <h3>Personal Trainer</h3>
+                <br/>
+                <p class="p-3">Pricing</p>
+                {#<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn-outline-neutral btn-round"><i class="fa fa-play"></i>Watch video</a>#}
+                <button type="button" class="btn btn-outline-neutral btn-round">Book Now</button>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+    <div class="section text-center">
+        <div class="container">
+
+            <br/><br/>
+            {#<div class="row p-4">#}
+            {#<div class="col-md-4 m-4 m-md-0">#}
+            {#<div class="info">#}
+            {#<div class="icon icon-danger">#}
+            {#<img src="/img/icons8-fitness.png"/>#}
+            {#</div>#}
+            {#<div class="description">#}
+            {#<h4 class="info-title">Training</h4>#}
+            {#<p class="description">A combination of cardiovascular and resistance training.</p>#}
+            {#<a href="#pkp" class="btn btn-link btn-danger">See more</a>#}
+            {#</div>#}
+            {#</div>#}
+            {#</div>#}
+            {#<div class="col-md-4 m-4 m-md-0">#}
+            {#<div class="info">#}
+            {#<div class="icon icon-danger">#}
+            {#<img src="/img/icons8-gym.png" alt="gym icon">#}
+            {#</div>#}
+            {#<div class="description">#}
+            {#<h4 class="info-title">Nutrition</h4>#}
+            {#<p>I place a lot of emphasis on nutrition and am highly knowledgeable in this area.</p>#}
+            {#<a href="#pkp" class="btn btn-link btn-danger">See more</a>#}
+            {#</div>#}
+            {#</div>#}
+            {#</div>#}
+            {#<div class="col-md-4 m-4 m-md-0">#}
+            {#<div class="info">#}
+            {#<div>#}
+            {#<img src="/img/icons8-sports-mode.png" alt="sports icon">#}
+            {#</div>#}
+            {#<div class="description">#}
+            {#<h4 class="info-title">Results</h4>#}
+            {#<p>I monitor your fitness and provide measurements for body weight and body fat every 2 weeks.</p>#}
+            {#<a href="#pkp" class="btn btn-link btn-danger">See more</a>#}
+            {#</div>#}
+            {#</div>#}
+            {#</div>#}
+
+            {#</div>#}
+            <div class="row">
+                <div class="col-md-8 ml-auto mr-auto">
+                    <h2 class="title">Pricing</h2>
+                    <h5 class="description">
+                        I have a flexible price structure for my classes -
+                    </h5>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 m-4 m-md-0">
+                        <div class="card">
+                            <div class="card-img-top bg-primary p-3">
+                                <img src="/img/icons8-fitness.png"/>
+                            </div>
+                            <div class="card-body">
+                                <div class="description">
+                                    <h4 class="card-title">Solo</h4>
+                                    <p class="card-text">35 per session</p>
+                                    <p class="description">180 for 6 (thats 30 per session)</p>
+                                    {#<a href="#pkp" class="btn btn-link btn-danger">See more</a>#}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 m-4 m-md-0">
+                        <div class="card">
+                            <div class="card-img-top bg-danger p-3">
+                                <img src="/img/icons8-gym.png" alt="gym icon">
+                            </div>
+                            <div class="card-body">
+                                <div class="description">
+                                    <h4 class="card-title">Group</h4>
+                                    <p class="card-text">40 per session</p>
+                                    <p class="description">240 for 6 sessions (40 each session)</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 m-4 m-md-0">
+                        <div class="card">
+                            <div class="card-img-top bg-info p-3">
+                                <img src="/img/icons8-sports-mode.png" alt="sports icon">
+                            </div>
+                            <div class="card-body">
+                                <div class="description">
+                                    <h4 class="card-title">Camps</h4>
+                                    <p class="card-text">8 week camp</p>
+                                    <p class="card-text">2 x personal training sessions per week</p>
+                                    <p class="card-text">guidance on additional training for the week</p>
+                                    <p class="card-text">tailored nutritional plan</p>
+                                    <p class="card-text">measurements taken every 2 weeks for body weight and fat.</p>
+                                    <p class="card-footer">450 (paid over 2 instalments, first half on the 1st session)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+{% endblock %}

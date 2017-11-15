@@ -3,60 +3,7 @@
 {% block description %}Personal Trainer based out of Northwood Gym. Prices from 30euro per session and free 30min consultation. {% endblock %}
 
 {% block content %}
-    <nav class="navbar navbar-expand-lg fixed-top navbar-transparent" color-on-scroll="300">
-        <div class="container">
-            <div class="navbar-translate">
-                <a class="navbar-brand" href="#">Phil Dillon Fitness</a>
-                <button class="navbar-toggler navbar-toggler-right navbar-burger" type="button" data-toggle="collapse" data-target="#navbarToggler"
-                        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-bar"></span>
-                    <span class="navbar-toggler-bar"></span>
-                    <span class="navbar-toggler-bar"></span>
-                </button>
-            </div>
-            <div class="collapse navbar-collapse" id="navbarToggler">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" target="_blank" class="nav-link">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="tel:+13174562564" class="nav-link">call</a>
-                    </li>
-                    {#<li class="nav-item">#}
-                    {#<a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="https://twitter.com/CreativeTim"#}
-                    {#target="_blank">#}
-                    {#<i class="fa fa-twitter"></i>#}
-                    {#<p class="d-lg-none">Twitter</p>#}
-                    {#</a>#}
-                    {#</li>#}
-                    <li class="nav-item">
-                        <a class="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom" href="https://www.facebook.com/CreativeTim"
-                           target="_blank">
-                            <i class="fa fa-facebook-square"></i>
-                            <p class="d-lg-none">Facebook</p>
-                        </a>
-                    </li>
-                    {#<li class="nav-item">#}
-                    {#<a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom"#}
-                    {#href="https://www.instagram.com/CreativeTimOfficial" target="_blank">#}
-                    {#<i class="fa fa-instagram"></i>#}
-                    {#<p class="d-lg-none">Instagram</p>#}
-                    {#</a>#}
-                    {#</li>#}
-                    {#<li class="nav-item">#}
-                    {#<a class="nav-link" rel="tooltip" title="Star on GitHub" data-placement="bottom" href="https://www.github.com/CreativeTimOfficial"#}
-                    {#target="_blank">#}
-                    {#<i class="fa fa-github"></i>#}
-                    {#<p class="d-lg-none">GitHub</p>#}
-                    {#</a>#}
-                    {#</li>#}
-                </ul>
-            </div>
-        </div>
-    </nav>
+    {% include 'navbar.twig' %}
 
     <div class="page-header page-header-lg" style="background-image: url('/img/phil_2.jpg');">
         <div class="filter"></div>
@@ -65,22 +12,22 @@
                 <h1>Phil Dillon Fitness</h1>
                 <h3>Personal Trainer</h3>
                 <br/>
-
+                <p class="p-3">Get your free 30min fitness assessment</p>
                 {#<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn-outline-neutral btn-round"><i class="fa fa-play"></i>Watch video</a>#}
-                {#<button type="button" class="btn btn-outline-neutral btn-round">Download</button>#}
+                <button type="button" class="btn btn-outline-neutral btn-round">Book Now</button>
             </div>
         </div>
-    </div>
+    </div><!-- end page-header -->
     <div class="main">
         <div class="section text-center">
             <div class="container">
 
                 <br/><br/>
                 <div class="row p-4">
-                    <div class="col-md-4">
+                    <div class="col-md-4 m-4 m-md-0">
                         <div class="info">
-                            <div class="icon icon-danger">
-                                <i class="nc-icon nc-album-2"></i>
+                            <div class="bg-primary p-3">
+                                <img src="/img/icons8-fitness.png" class="bg-primary"/>
                             </div>
                             <div class="description">
                                 <h4 class="info-title">Training</h4>
@@ -89,10 +36,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 m-4 m-md-0">
                         <div class="info">
-                            <div class="icon icon-danger">
-                                <i class="nc-icon nc-bulb-63"></i>
+                            <div class="bg-danger p-3">
+                                <img src="/img/icons8-gym.png" alt="gym icon">
                             </div>
                             <div class="description">
                                 <h4 class="info-title">Nutrition</h4>
@@ -101,10 +48,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 m-4 m-md-0">
                         <div class="info">
-                            <div class="icon icon-danger">
-                                <i class="nc-icon nc-chart-bar-32"></i>
+                            <div class="bg-success p-3">
+                                <img src="/img/icons8-sports-mode.png" alt="sports icon">
                             </div>
                             <div class="description">
                                 <h4 class="info-title">Results</h4>
@@ -130,8 +77,24 @@
                             Book a date and time and i'll get back to you if available.
                         </p>
                         <br>
-                        <div class="form-group">
-                            <div class="input-group date" id="datetimepicker">
+                        <form action="">
+                            <div class="input-group p-1">
+                                <input type="name" class="form-control" placeholder="name"/>
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-apple">
+                                        <i class="fa fa-apple" aria-hidden="true"></i>
+                                    </span>
+                                </span>
+                            </div>
+                            <div class="input-group p-1">
+                                <input type="email" class="form-control" placeholder="email"/>
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-user">
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                    </span>
+                                </span>
+                            </div>
+                            <div class="input-group date p-1" id="datetimepicker">
                                 <input type="text" class="form-control datetimepicker" placeholder="book a date" readonly="true"/>
                                 <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-calendar">
@@ -139,8 +102,9 @@
                                     </span>
                                 </span>
                             </div>
-                        </div>
+
                         <a href="#paper-kit" class="btn btn-danger btn-round">Book Now</a>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -232,21 +196,27 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">Im phil dillon, a personal trainer. I have a B.Sc(hons) in Sports Health & Physical Education from the University of
-                    Wales as well as two ITEC qualifications in personal training and fitness instructing.
+                <div class="modal-body">
+                    <h6>Info</h6>
+                    <p>
+                        Im phil dillon, a personal trainer. I have a B.Sc(hons) in Sports Health & Physical Education from the University of
+                        Wales as well as two ITEC qualifications in personal training and fitness instructing.
+                    </p>
+                    <h6>Influences</h6>
+                    <p>
+                        My Father is a world champion power-lifter for Ireland (Austria 2007) and is still lifting 40 years later. As a child, i grew up
+                        around the gym and from there developed my love for training and staying fit. Ive also been involved in numerous sports while growing
+                        up: Power-lifting, football, hurling, soccer, cross-country and badminton.
+                    </p>
                 </div>
                 <div class="modal-footer">
-                    <div class="left-side">
-                        <button type="button" class="btn btn-default btn-link" data-dismiss="modal">Never mind</button>
-                    </div>
-                    <div class="divider"></div>
-                    <div class="right-side">
-                        <button type="button" class="btn btn-danger btn-link">Delete</button>
+                    <div>
+                        <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div><!-- end profile modal -->
     <footer class="footer section-dark">
         <div class="container">
             <div class="row">
