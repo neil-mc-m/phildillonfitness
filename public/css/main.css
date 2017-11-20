@@ -3,3 +3,6 @@
     opacity: 1;
     cursor: pointer;
 }
+#mapid {
+    height: 450px;
+}
