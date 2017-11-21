@@ -94,7 +94,7 @@
             </div>
         </div>
     </div><!-- end section -->
-    <div class="container-fluid">
+    <div class="container">
         <div id="mapid"></div>
     </div>
 
@@ -109,6 +109,6 @@
             accessToken: '{{ get_env("MAPBOX_ACCESS_TOKEN") }}'
         }).addTo(mymap);
         var marker = L.marker([53.401472, -6.257827]).addTo(mymap);
-        marker.bindPopup("<b>Hey!</b><br>Im right here.").openPopup();
+        marker.bindPopup("<b>Hey!</b><br>Im right here.<br>In Northwood Gym").openPopup();
     </script>
 {% endblock %}

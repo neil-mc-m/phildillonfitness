@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('hello');
-});
+Route::get('/', 'FrontendController@show');
 
 Route::get('/pricing', function () {
     return view('pricing');
