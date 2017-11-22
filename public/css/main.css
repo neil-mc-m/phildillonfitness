@@ -4,7 +4,8 @@
     cursor: pointer;
 }
 #mapid {
-    height: 450px;
+    height: 30em;
+    margin-bottom: 3em;
 }
 /* facebook share styles - https://sharingbuttons.io */
 .resp-sharing-button__link,
@@ -154,3 +155,21 @@
     border-color: #2d4373;
 }
 
+.footer {
+    background-color: #1b1e21;
+    color: white;
+}
+.footer nav > ul > li {
+    padding: 2px;
+    margin: 2px;
+}
+.card .card-footer {
+    background: rgba(0,0,0,.06);
+}
+.footer nav > ul > li > a:not(.btn) {
+    color: #51bcda;
+}
+.navbar .nav-link > i {
+    position: inherit;
+    top: 2px;
+}

@@ -9,18 +9,35 @@
 namespace App\Http\Controllers;
 
 use App\Camp;
-use App\Http\Controllers\Controller;
 
 class FrontendController extends Controller
 {
     /**
-     * Show the profile for the given user.
+     * Show the home page.
      *
      *
      * @return Response
      */
-    public function show()
+    public function home()
     {
-        return view('hello', ['camp' =>Camp::findOrFail('1')]);
+        return view('hello',
+            [
+                'camp' => Camp::findOrFail('1')
+            ]
+        );
     }
+
+    public function pricing()
+    {
+        return view('pricing',
+            array(
+                'camp' => Camp::findOrFail('1')
+            ));
+    }
+
+    public function contact()
+    {
+        return view('contact');
+    }
+
 }

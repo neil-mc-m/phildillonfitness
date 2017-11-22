@@ -1,19 +1,46 @@
-<footer class="footer section-dark">
+<footer class="footer section">
     <div class="container">
         <div class="row">
-            <nav class="footer-nav">
-                <ul>
-                    <li>
-                    </li>
-                    <li><a href="http://blog.creative-tim.com">Blog</a></li>
-                    <li><a href="https://www.creative-tim.com/license">Licenses</a></li>
-                </ul>
-            </nav>
-            <div class="credits ml-auto">
-					<span class="copyright">
-						&copy;{{ "now"|date('Y', timezone="Europe/Dublin") }}
-                        Have a nice {{ "now"|date('l') }}
-					</span>
+            <div class="col">
+                <nav class="footer-nav">
+                    <h6 class="text-center">Quicklinks</h6>
+                    <ul class="nav flex-column">
+                        <li><a href="/">home</a></li>
+                        <li><a href="/pricing">pricing</a></li>
+                        <li><a href="/contact">contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col">
+                <nav class="footer-nav">
+                    <h6 class="text-center">Contact details</h6>
+                    <ul class="nav flex-column">
+                        <li><a href="mailto:info@phildillonfitness.ie">info@phildillonfitness.ie</a></li>
+
+                        <li class="nav-item">
+                            <a href="tel:+13174562564" class="nav-link d-block d-sm-none">call</a>
+                            <a href="#" class="nav-link d-none d-md-block">call : 0876216768</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col flex-column">
+                <h6 class="text-center">credits</h6>
+                <nav class="footer-nav">
+                    <ul class="nav flex-column">
+                        <li><a href="http://solidsites.ie">a Solidsites website</a></li>
+
+                        <li>
+                            &copy;{{ "now"|date('Y', timezone="Europe/Dublin") }}
+                            Have a nice {{ "now"|date('l') }}
+                        </li>
+                    </ul>
+                </nav>
+                {#<div class="copyright">#}
+                {#&copy;{{ "now"|date('Y', timezone="Europe/Dublin") }}#}
+                {#Have a nice {{ "now"|date('l') }}#}
+                {#</div>#}
+                {#<div class="copyright">A SolidSites website</div>#}
             </div>
         </div>
 

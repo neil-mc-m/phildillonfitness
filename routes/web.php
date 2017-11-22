@@ -11,12 +11,8 @@
 |
 */
 
-Route::get('/', 'FrontendController@show');
+Route::get('/', 'FrontendController@home');
 
-Route::get('/pricing', function () {
-    return view('pricing');
-});
+Route::get('/pricing', 'FrontendController@pricing');
 
-Route::get('/contact', function () {
-    return view('contact');
-});
+Route::get('/contact', 'FrontendController@contact');
