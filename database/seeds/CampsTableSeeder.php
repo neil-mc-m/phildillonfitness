@@ -3,6 +3,9 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Seed class to add a camp to the database 
+ */
 class CampsTableSeeder extends Seeder
 {
     /**
