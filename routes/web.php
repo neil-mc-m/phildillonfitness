@@ -16,3 +16,20 @@ Route::get('/', 'FrontendController@home');
 Route::get('/pricing', 'FrontendController@pricing');
 
 Route::get('/contact', 'FrontendController@contact');
+
+Route::get('/login', 'LoginController@showLoginForm');
+Route::post('/login', 'LoginController@authenticate');
+Route::any('/admin/dashboard', function () {
+    return view('dashboard');
+});
+//Auth::routes();
+
+//Route::get('/home', 'HomeController@index')->name('home');
+
+Route::prefix('admin')->group(function () {
+    Route::resource('camps', 'CampController');
+});
+
+
+
+

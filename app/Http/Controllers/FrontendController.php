@@ -27,6 +27,11 @@ class FrontendController extends Controller
         );
     }
 
+    /**
+     * Show the pricing page.
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function pricing()
     {
         return view('pricing',
@@ -35,6 +40,11 @@ class FrontendController extends Controller
             ));
     }
 
+    /**
+     * Show the contact page.
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function contact()
     {
         return view('contact');
