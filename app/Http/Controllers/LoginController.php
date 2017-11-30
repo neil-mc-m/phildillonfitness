@@ -47,12 +47,12 @@ class LoginController extends Controller
     public function authenticate(Request $request)
     {
         $email = $request->input('email');
-        var_dump($email);
-
         $password = $request->input('password');
-        var_dump($password);
+
         if (Auth::attempt(['email' => $email, 'password' => $password])) {
-            return redirect('/admin/dashboard');
+            $user = Auth::user();
+            Auth::login($user);
+            return view('dashboard');
         }
         return view('login')->withErrors('Error logging in!');
 

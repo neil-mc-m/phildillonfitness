@@ -18,8 +18,8 @@ Route::get('/pricing', 'FrontendController@pricing');
 Route::get('/contact', 'FrontendController@contact');
 
 Route::get('/login', 'LoginController@showLoginForm');
-Route::post('/login', 'LoginController@authenticate');
-Route::any('/admin/dashboard', function () {
+Route::post('/auth', 'LoginController@authenticate');
+Route::get('/admin/dashboard', function() {
     return view('dashboard');
 });
 //Auth::routes();
