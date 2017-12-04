@@ -75,13 +75,16 @@
                         {#<div class="col-md-4 m-4 m-md-0">#}
                         <div class="card">
                             <div class="card-img-top bg-primary p-3">
-                                <img src="/img/icons8-fitness.png"/>
+                                {#<img src="/img/icons8-fitness.png"/>#}
+                                <h4 class="card-title">Solo</h4>
+
                             </div>
                             <div class="card-body">
                                 <div class="description">
-                                    <h4 class="card-title">Solo</h4>
-                                    <p class="card-text">35 per session</p>
-                                    <p class="description">180 for 6 (thats 30 per session)</p>
+                                    {#<h4 class="card-title">Solo</h4>#}
+                                    <p class="card-text">&euro;35 per session</p>
+                                    <p>or</p>
+                                    <p class="description">&euro;180 for 6 (thats &euro;30 per session)</p>
                                     {#<a href="#pkp" class="btn btn-link btn-danger">See more</a>#}
                                 </div>
                             </div>
@@ -93,13 +96,15 @@
                         {#<div class="col-md-4 m-4 m-md-0">#}
                         <div class="card">
                             <div class="card-img-top bg-danger p-3">
-                                <img src="/img/icons8-gym.png" alt="gym icon">
+                                {#<img src="/img/icons8-gym.png" alt="gym icon">#}
+                                <h4 class="card-title">Group</h4>
                             </div>
                             <div class="card-body">
                                 <div class="description">
-                                    <h4 class="card-title">Group</h4>
-                                    <p class="card-text">40 per session</p>
-                                    <p class="description">240 for 6 sessions (40 each session)</p>
+                                    {#<h4 class="card-title">Group</h4>#}
+                                    <p class="card-text">&euro;40 per session</p>
+                                    <p>or</p>
+                                    <p class="description">&euro;240 for 6 sessions (&euro;40 each session)</p>
                                 </div>
 
                             </div>
@@ -111,11 +116,12 @@
                         {#<div class="col-md-4 m-4 m-md-0">#}
                         <div class="card">
                             <div class="card-img-top bg-success p-3">
-                                <img src="/img/icons8-sports-mode.png" alt="sports icon">
+                                {#<img src="/img/icons8-sports-mode.png" alt="sports icon">#}
+                                <h4 class="card-title">Camps</h4>
                             </div>
                             <div class="card-body">
                                 <div class="description">
-                                    <h4 class="card-title">Camps</h4>
+                                    {#<h4 class="card-title">Camps</h4>#}
                                     <h6 class="card-t">{{ camp.name }}</h6>
                                     <p class="card-text">{{ camp.duration }} week camp</p>
                                     <p class="card-text">{{ camp.feature_1 }}</p>
