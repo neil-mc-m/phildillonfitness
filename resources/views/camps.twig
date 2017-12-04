@@ -3,31 +3,47 @@
 {% block description %}{% endblock %}
 
 {% block content %}
-    <nav class="navbar navbar-expand-lg fixed-top navbar-transparent" color-on-scroll="300">
-        <div class="container">
-            <div class="navbar-translate">
-                <a class="navbar-brand" href="#">Phil Dillon Fitness</a>
-                <button class="navbar-toggler navbar-toggler-right navbar-burger" type="button" data-toggle="collapse" data-target="#navbarToggler"
-                        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-bar"></span>
-                    <span class="navbar-toggler-bar"></span>
-                    <span class="navbar-toggler-bar"></span>
-                </button>
-            </div>
-            <div class="collapse navbar-collapse" id="navbarToggler">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a href="/admin/dashboard" class="nav-link">Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/admin/camps" class="nav-link">View Camps</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/contact" class="nav-link">Contact</a>
-                    </li>
-                </ul>
+
+
+    <div>
+        <div class="container mb-4">
+            <div class="row">
+                <div class="col-md-8">
+                    <h2>Camps</h2>
+                </div>
             </div>
         </div>
-    </nav><!-- end nav -->
-    we got camps!!!
+        <div class="container">
+            <div class="row">
+
+                {% for camp in camps %}
+                    <div class="col-md-3">
+                        <div class="card">
+
+
+                            <h6 class="card-header bg-primary">
+                                {{ camp.name }}
+                            </h6>
+                            <div class="description">
+                                <div class="card-body">
+                                    <p class="card-text">duration : {{ camp.duration }}</p>
+                                    <p class="description">price : {{ camp.price }}</p>
+                                    <h6>Features</h6>
+                                    <p>{{ camp.feature_1 }}</p>
+                                    <p>{{ camp.feature_2 }}</p>
+                                </div>
+                            </div>
+
+                            <div class="card-footer text-muted">
+                                <a href="/admin/camps/{{ camp.id }}/edit">edit</a>
+                            </div>
+
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+
 {% endblock %}

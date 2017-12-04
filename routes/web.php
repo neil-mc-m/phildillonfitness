@@ -18,6 +18,7 @@ Route::get('/pricing', 'FrontendController@pricing');
 Route::get('/contact', 'FrontendController@contact');
 
 Route::get('/login', 'LoginController@showLoginForm');
+Route::get('/logout', 'LoginController@logoutAction');
 Route::post('/auth', 'LoginController@authenticate');
 Route::get('/admin/dashboard', function() {
     return view('dashboard');

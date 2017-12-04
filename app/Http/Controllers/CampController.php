@@ -25,7 +25,7 @@ class CampController extends Controller
      */
     public function create()
     {
-        //
+        return view('create');
     }
 
     /**
@@ -58,7 +58,8 @@ class CampController extends Controller
      */
     public function edit($id)
     {
-        //
+        $camp = Camp::find($id);
+        return view('create', ['camp' => $camp]);
     }
 
     /**

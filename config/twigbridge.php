@@ -113,8 +113,8 @@ return [
             'App\Extensions\Twig\TwigFilters',
             // 'TwigBridge\Extension\Laravel\Gate',
 
-            // 'TwigBridge\Extension\Laravel\Form',
-            // 'TwigBridge\Extension\Laravel\Html',
+             'TwigBridge\Extension\Laravel\Form',
+             'TwigBridge\Extension\Laravel\Html',
             // 'TwigBridge\Extension\Laravel\Legacy\Facades',
         ],
 
@@ -145,7 +145,9 @@ return [
         | in order to be marked as safe.
         |
         */
-        'facades' => ['auth'],
+        'facades' => [
+            'auth',
+        ],
 
         /*
         |--------------------------------------------------------------------------

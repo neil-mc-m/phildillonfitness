@@ -57,4 +57,10 @@ class LoginController extends Controller
         return view('login')->withErrors('Error logging in!');
 
     }
+
+    public function logoutAction()
+    {
+        Auth::logout();
+        return redirect('/');
+    }
 }
