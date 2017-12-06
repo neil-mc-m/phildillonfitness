@@ -9,7 +9,10 @@
 namespace App\Http\Controllers;
 
 use App\Camp;
-
+use App\Mail\BookingForm;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 class FrontendController extends Controller
 {
     /**
@@ -50,4 +53,9 @@ class FrontendController extends Controller
         return view('contact');
     }
 
+    public function book(Request $request)
+    {
+        Mail::to('neilo2000@gmail.com')->send(new BookingForm($request));
+        return view('contact');
+    }
 }

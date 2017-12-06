@@ -16,7 +16,7 @@ Route::get('/', 'FrontendController@home');
 Route::get('/pricing', 'FrontendController@pricing');
 
 Route::get('/contact', 'FrontendController@contact');
-
+Route::post('/book', 'FrontendController@book')->name('book');
 Route::get('/login', 'LoginController@showLoginForm');
 Route::get('/logout', 'LoginController@logoutAction');
 Route::post('/auth', 'LoginController@authenticate');

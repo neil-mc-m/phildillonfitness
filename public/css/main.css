@@ -175,6 +175,8 @@
 }
 
 .carousel {
-    background-color: #5D6D7E;
-
+    background-color: rgba(255, 255, 255, 0.8);;
+}
+.carousel-indicators > li {
+    background-color: black;
 }

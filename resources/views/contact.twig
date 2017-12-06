@@ -32,14 +32,15 @@
                         Book a date and time and i'll get back to you if available.
                     </p>
                     <br>
-                    <form action="">
+                    <form action="{{ route('book') }}" method="POST">
+                        {{ csrf_field() }}
                         <div class="container">
                         <div class="row">
                             <div class="col-md-6 p-1">
                                 <label for="name">Name</label>
                                 <div class="input-group">
 
-                                    <input type="name" class="form-control" placeholder="name"/>
+                                    <input type="text" class="form-control" name="name" placeholder="name"/>
                                     <span class="input-group-addon">
 
                                         <i class="nc-icon nc-single-02" aria-hidden="true"></i>
@@ -51,7 +52,7 @@
                                 <label for="email">email</label>
                                 <div class="input-group">
 
-                                    <input type="email" class="form-control" placeholder="email"/>
+                                    <input type="email" class="form-control" name="email" placeholder="email"/>
                                     <span class="input-group-addon">
 
                                         <i class="nc-icon nc-email-85" aria-hidden="true"></i>
@@ -64,7 +65,7 @@
                             <div class="col-md-12 p-1">
                                 <label for="date">Date</label>
                                 <div class="input-group date" id="datetimepicker">
-                                    <input type="text" class="form-control datetimepicker" placeholder="book a date" readonly="true"/>
+                                    <input type="text" class="form-control datetimepicker" name="date" placeholder="book a date" readonly="true"/>
                                     <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-calendar">
                                         <i class="fa fa-calendar" aria-hidden="true"></i>
@@ -77,7 +78,8 @@
                         <div class="row">
                             <div class="col-md-12 p-1">
                                 <label for="message">Message</label>
-                                <textarea class="form-control" rows="4" placeholder="Got any special requirements or allergies? Let me know here.."></textarea>
+                                <textarea class="form-control" name="message" rows="4" placeholder="Got any special requirements or allergies? Let me know here.
+                                ."></textarea>
                             </div>
 
 
@@ -85,7 +87,7 @@
 
                         <div class="row text-center">
                             <div class="col-md-12 m-3">
-                                <a href="" class="btn btn-danger btn-lg btn-fill">Book</a>
+                                <button type="submit" class="btn btn-danger btn-lg btn-fill">Book</button>
                             </div>
                         </div>
                         </div>
