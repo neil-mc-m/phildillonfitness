@@ -12,14 +12,14 @@ class BookingForm extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $request;
+    public $bookingFormData;
     /**
      * Create a new message instance.
      *
      */
-    public function __construct(Request $request)
+    public function __construct($bookingFormData)
     {
-        $this->request = $request;
+        $this->bookingFormData = $bookingFormData;
     }
 
     /**
@@ -29,6 +29,7 @@ class BookingForm extends Mailable
      */
     public function build()
     {
+        $this->replyTo($this->bookingFormData['email'], $this->bookingFormData['name']);
         return $this->view('emails.booking');
     }
 }

@@ -13,11 +13,34 @@
                 {#<h1>Phil Dillon Fitness</h1>#}
                 <h1>Personal Trainer</h1>
                 <br/>
-                <p class="p-3">Get your free 30min fitness assessment</p>
-                <button type="button" class="btn btn-outline-neutral btn-round">Book Now</button>
+                <h6 class="p-3">Contact</h6>
+                <p>Use the booking form below to get a free fitness consultation.</p>
             </div>
         </div>
     </div><!-- end page-header -->
+    {% if sent is defined %}
+        {% if sent == true %}
+            <div class="alert alert-success">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-md-8 p-">
+                            <p>Thanks for getting in touch. Ill get back to you to confirm your fitness assessment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- end alert -->
+        {% elseif sent == false %}
+            <div class="alert alert-success">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-md-8 p-">
+                            <p>Sorry, that message didnt send for some reason.</p>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- end alert -->
+        {% endif %}
+    {% endif %}
     <div class="section">
         <div class="container">
             <div class="row">
@@ -32,64 +55,64 @@
                         Book a date and time and i'll get back to you if available.
                     </p>
                     <br>
-                    <form action="{{ route('book') }}" method="POST">
+                    <form action="{{ route('contact') }}" method="POST">
                         {{ csrf_field() }}
                         <div class="container">
-                        <div class="row">
-                            <div class="col-md-6 p-1">
-                                <label for="name">Name</label>
-                                <div class="input-group">
+                            <div class="row">
+                                <div class="col-md-6 p-1">
+                                    <label for="name">Name</label>
+                                    <div class="input-group">
 
-                                    <input type="text" class="form-control" name="name" placeholder="name"/>
-                                    <span class="input-group-addon">
+                                        <input type="text" class="form-control" name="name" placeholder="name"/>
+                                        <span class="input-group-addon">
 
                                         <i class="nc-icon nc-single-02" aria-hidden="true"></i>
 
                                 </span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6 p-1">
-                                <label for="email">email</label>
-                                <div class="input-group">
+                                <div class="col-md-6 p-1">
+                                    <label for="email">email</label>
+                                    <div class="input-group">
 
-                                    <input type="email" class="form-control" name="email" placeholder="email"/>
-                                    <span class="input-group-addon">
+                                        <input type="email" class="form-control" name="email" placeholder="email"/>
+                                        <span class="input-group-addon">
 
                                         <i class="nc-icon nc-email-85" aria-hidden="true"></i>
 
                                 </span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12 p-1">
-                                <label for="date">Date</label>
-                                <div class="input-group date" id="datetimepicker">
-                                    <input type="text" class="form-control datetimepicker" name="date" placeholder="book a date" readonly="true"/>
-                                    <span class="input-group-addon">
+                            <div class="row">
+                                <div class="col-md-12 p-1">
+                                    <label for="date">Date</label>
+                                    <div class="input-group date" id="datetimepicker">
+                                        <input type="text" class="form-control datetimepicker" name="date" placeholder="book a date" readonly="true"/>
+                                        <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-calendar">
                                         <i class="fa fa-calendar" aria-hidden="true"></i>
                                     </span>
                                 </span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 p-1">
+                                    <label for="message">Message</label>
+                                    <textarea class="form-control" name="message" rows="4" placeholder="Got any special requirements or allergies? Let me know here.
+                                ."></textarea>
+                                </div>
+
+
+                            </div>
+
+                            <div class="row text-center">
+                                <div class="col-md-12 m-3">
+                                    <button type="submit" class="btn btn-danger btn-lg btn-fill">Book</button>
                                 </div>
                             </div>
-
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12 p-1">
-                                <label for="message">Message</label>
-                                <textarea class="form-control" name="message" rows="4" placeholder="Got any special requirements or allergies? Let me know here.
-                                ."></textarea>
-                            </div>
-
-
-                        </div>
-
-                        <div class="row text-center">
-                            <div class="col-md-12 m-3">
-                                <button type="submit" class="btn btn-danger btn-lg btn-fill">Book</button>
-                            </div>
-                        </div>
                         </div>
                     </form>
                 </div>

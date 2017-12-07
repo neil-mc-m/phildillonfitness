@@ -13,6 +13,7 @@ use App\Mail\BookingForm;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+
 class FrontendController extends Controller
 {
     /**
@@ -53,9 +54,28 @@ class FrontendController extends Controller
         return view('contact');
     }
 
+    /**
+     * Process the contact form and send an email form it.
+     *
+     * @param Request $request
+     * @return view
+     */
     public function book(Request $request)
     {
-        Mail::to('neilo2000@gmail.com')->send(new BookingForm($request));
-        return view('contact');
+
+        $bookingFormData = array(
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'date' => $request->input('date'),
+            'message' => $request->input('message')
+        );
+        try {
+            Mail::to(env('MAIL_TO'))->send(new BookingForm($bookingFormData));
+            return view('contact')->with(['sent' => true]);
+        } catch (\Exception $e) {
+            return view('contact')->with(['sent' => false]);
+        }
+
+
     }
 }

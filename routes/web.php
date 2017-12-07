@@ -16,16 +16,14 @@ Route::get('/', 'FrontendController@home');
 Route::get('/pricing', 'FrontendController@pricing');
 
 Route::get('/contact', 'FrontendController@contact');
-Route::post('/book', 'FrontendController@book')->name('book');
+Route::post('/contact', 'FrontendController@book')->name('contact');
 Route::get('/login', 'LoginController@showLoginForm');
 Route::get('/logout', 'LoginController@logoutAction');
 Route::post('/auth', 'LoginController@authenticate');
 Route::get('/admin/dashboard', function() {
     return view('dashboard');
 });
-//Auth::routes();
 
-//Route::get('/home', 'HomeController@index')->name('home');
 
 Route::prefix('admin')->group(function () {
     Route::resource('camps', 'CampController');
