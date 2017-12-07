@@ -12,7 +12,7 @@ use App\Camp;
 use App\Mail\BookingForm;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+
 
 class FrontendController extends Controller
 {
