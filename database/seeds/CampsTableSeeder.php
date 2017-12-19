@@ -19,8 +19,8 @@ class CampsTableSeeder extends Seeder
             'name' => 'get fit for christmas',
             'duration' => '8',
             'price' => '450',
-            'feature_1' => '2 x personal traing sessions per week',
-            'feature_2' => 'guidance on additional traing for the week'
+            'feature_1' => '2 x personal training sessions per week',
+            'feature_2' => 'guidance on additional training for the week'
         ]);
     }
 }

@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 
 use App\Camp;
 use App\Mail\BookingForm;
+use App\Mail\CallBackForm;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 
@@ -71,11 +72,25 @@ class FrontendController extends Controller
         );
         try {
             Mail::to(env('MAIL_TO'))->send(new BookingForm($bookingFormData));
-            return view('contact')->with(['sent' => true]);
+            return view('partials.confirm_email');
         } catch (\Exception $e) {
             return view('contact')->with(['sent' => false]);
         }
+    }
 
+    public function callback(Request $request)
+    {
+        $callbackFormData = array(
+            'name' => $request->input('name'),
+            'phone' => $request->input('phone')
+        );
 
+        try {
+            Mail::to(env('MAIL_TO'))->send(new CallBackForm($callbackFormData));
+            return view('partials.confirm_email');
+        } catch (\Exception $e)
+        {
+            return $e->getMessage();
+        }
     }
 }

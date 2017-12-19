@@ -17,6 +17,7 @@ Route::get('/pricing', 'FrontendController@pricing');
 
 Route::get('/contact', 'FrontendController@contact');
 Route::post('/contact', 'FrontendController@book')->name('contact');
+Route::post('/callback', 'FrontendController@callback')->name('callback');
 Route::get('/login', 'LoginController@showLoginForm');
 Route::get('/logout', 'LoginController@logoutAction');
 Route::post('/auth', 'LoginController@authenticate');

@@ -18,44 +18,21 @@
             </div>
         </div>
     </div><!-- end page-header -->
-    {% if sent is defined %}
-        {% if sent == true %}
-            <div class="alert alert-success">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12 col-md-8 p-">
-                            <p>Thanks for getting in touch. Ill get back to you to confirm your fitness assessment.</p>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- end alert -->
-        {% elseif sent == false %}
-            <div class="alert alert-success">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12 col-md-8 p-">
-                            <p>Sorry, that message didnt send for some reason.</p>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- end alert -->
-        {% endif %}
-    {% endif %}
+
     <div class="section">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 ml-auto mr-auto">
-                    <h2 class="title">Free 30 minute consultation</h2>
+                    <h2 class="title">Request a callback</h2>
                     <h5 class="description">
-                        Book your free 30 minute consultation where i will go through a 20 point questionnaire to discover what your fitness goals are. I
-                        will then take you through a fitness assessment, which takes 10 minutes, and using the information from the questionnaire and the
-                        fitness assessment, i will design a fitness program tailored specifically to you.
+                        If youre busy, why not let me call you back. Fill in the form fields and
+                        i'll be in touch.
                     </h5>
                     <p class="text-info">
-                        Book a date and time and i'll get back to you if available.
+                        I usally get back to people within a day or two.
                     </p>
                     <br>
-                    <form action="{{ route('contact') }}" method="POST">
+                    <form id="callBackForm" action="{{ route('callback') }}" method="POST">
                         {{ csrf_field() }}
                         <div class="container">
                             <div class="row">
@@ -72,45 +49,24 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6 p-1">
-                                    <label for="email">email</label>
+                                    <label for="phone">phone number</label>
                                     <div class="input-group">
 
-                                        <input type="email" class="form-control" name="email" placeholder="email"/>
+                                        <input type="tel" class="form-control" name="phone"
+                                               placeholder="phone number"/>
                                         <span class="input-group-addon">
 
-                                        <i class="nc-icon nc-email-85" aria-hidden="true"></i>
+                                        <i class="nc-icon nc-phone" aria-hidden="true"></i>
 
                                 </span>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12 p-1">
-                                    <label for="date">Date</label>
-                                    <div class="input-group date" id="datetimepicker">
-                                        <input type="text" class="form-control datetimepicker" name="date" placeholder="book a date" readonly="true"/>
-                                        <span class="input-group-addon">
-                                    <span class="glyphicon glyphicon-calendar">
-                                        <i class="fa fa-calendar" aria-hidden="true"></i>
-                                    </span>
-                                </span>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12 p-1">
-                                    <label for="message">Message</label>
-                                    <textarea class="form-control" name="message" rows="4" placeholder="Got any special requirements or allergies? Let me know here.
-                                ."></textarea>
-                                </div>
-
-
                             </div>
 
                             <div class="row text-center">
                                 <div class="col-md-12 m-3">
-                                    <button type="submit" class="btn btn-danger btn-lg btn-fill">Book</button>
+                                    <button type="submit" class="btn btn-danger btn-lg
+                                    btn-fill">Request Callback</button>
                                 </div>
                             </div>
                         </div>
@@ -119,6 +75,12 @@
             </div>
         </div>
     </div><!-- end section -->
+
+    <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog"
+         aria-labelledby="exampleModalLabel" aria-hidden="true"><!-- email sent modal -->
+
+    </div><!-- end confirm email sent modal -->
+
     <div class="container-fluid">
         <div id="mapid"></div><!-- map -->
     </div>
