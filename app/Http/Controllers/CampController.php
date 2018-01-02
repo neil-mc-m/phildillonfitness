@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Camp;
+use Illuminate\Support\Facades\Redirect;
 
 class CampController extends Controller
 {
@@ -15,7 +16,7 @@ class CampController extends Controller
     public function index()
     {
         $camps = Camp::all();
-        return view('camps', ['camps' => $camps]);
+        return view('admin.camps', ['camps' => $camps]);
     }
 
     /**
@@ -25,7 +26,7 @@ class CampController extends Controller
      */
     public function create()
     {
-        return view('create');
+        return view('admin.create');
     }
 
     /**
@@ -36,7 +37,16 @@ class CampController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $camp = new Camp();
+        $camp->name = $request->input('name');
+        $camp->duration = $request->input('duration');
+        $camp->price = $request->input('price');
+        $camp->feature_1 = $request->input('feature_1');
+        $camp->feature_2 = $request->input('feature_2');
+        $camp->save();
+
+        $request->session()->flash('status', 'Task was successful!');
+        return Redirect::to('/admin/camps');
     }
 
     /**
@@ -47,7 +57,8 @@ class CampController extends Controller
      */
     public function show($id)
     {
-        //
+        $camp = Camp::find($id);
+        return view('admin.show_camp', ['camp' => $camp]);
     }
 
     /**
@@ -59,7 +70,7 @@ class CampController extends Controller
     public function edit($id)
     {
         $camp = Camp::find($id);
-        return view('create', ['camp' => $camp]);
+        return view('admin.edit', ['camp' => $camp]);
     }
 
     /**
@@ -71,7 +82,18 @@ class CampController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $camp = Camp::find($id);
+        $camp->name       = $request->input('name');
+        $camp->duration      = $request->input('duration');
+        $camp->price = $request->input('price');
+        $camp->feature_1 = $request->input('feature_1');
+        $camp->feature_2 = $request->input('feature_2');
+        $camp->save();
+        // get the updated camp from the db
+        $newCamp = Camp::find($id);
+        // redirect with message
+        $request->session()->flash('status', 'Task was successful!');
+        return view('admin.show_camp', ['camp' => $newCamp]);
     }
 
     /**
@@ -82,6 +104,9 @@ class CampController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $camp = Camp::find($id);
+        $camp->delete();
+
+        return Redirect::to('/admin/camps');
     }
 }

@@ -44,7 +44,7 @@ class LoginController extends Controller
         if (Auth::attempt(['email' => $email, 'password' => $password])) {
             $user = Auth::user();
             Auth::login($user);
-            return view('dashboard');
+            return view('admin.dashboard');
         }
         return view('login')->withErrors('Error logging in!');
 

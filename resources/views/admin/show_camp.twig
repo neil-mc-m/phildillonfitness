@@ -1,0 +1,31 @@
+{% extends 'admin/admin.twig' %}
+{% block title %} Dashboard {% endblock %}
+{% block description %}{% endblock %}
+
+{% block content %}
+    <div>
+        <div class="container m-4">
+            <div class="row">
+                <h6>Your Camp</h6>
+            </div>
+            <div class="row">
+                <div class="list-group">
+                    <ul class="list-group">
+                        <li class="list-group-item bg-primary"><h5>{{ camp.name }}</h5></li>
+                        <li class="list-group-item">duration : {{ camp.duration }}</li>
+                        <li class="list-group-item">price : {{ camp.price }}</li>
+                        <li class="list-group-item">{{ camp.feature_1 }}</li>
+                        <li class="list-group-item">{{ camp.feature_2 }}</li>
+                        <li class="list-group-item"><a href="{{ route('camps.edit' ,
+                            [camp.id] ) }}">Edit</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+{% endblock %}

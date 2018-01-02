@@ -1,0 +1,54 @@
+{% extends 'admin/admin.twig' %}
+{% block title %} Dashboard {% endblock %}
+{% block description %}{% endblock %}
+
+{% block content %}
+
+
+    <div>
+        <div class="container m-4">
+            <div class="row">
+
+                    <h6>Camps</h6>
+                {% if session_get('status') %}
+                    <div class="alert alert-success" role="alert">
+                        {{ session_get('status') }}
+                    </div>
+                    {% endif %}
+            </div>
+
+
+            <div class="row">
+                {#<div class="list-group">#}
+                {% for camp in camps %}
+
+                    <ul class="list-group">
+                        <li class="list-group-item bg-primary"><h5>{{ camp.name }}</h5></li>
+                        <li class="list-group-item">duration : {{ camp.duration }}</li>
+                        <li class="list-group-item">price : {{ camp.price }}</li>
+                        <li class="list-group-item">{{ camp.feature_1 }}</li>
+                        <li class="list-group-item">{{ camp.feature_2 }}</li>
+                        <li class="list-group-item d-flex justify-content-between
+                        align-items-center">
+                            <a class="btn btn-warning" href="{{ route('camps.edit' ,[camp.id] )
+                            }}">Edit</a>
+                            {{ form_open({ route: ['camps.destroy', camp.id], 'method':
+                                'DELETE'}) }}
+                            {{ form_submit('delete', {'class': 'btn btn-danger'}) }}
+                            {{ form_close() }}
+                        </li>
+
+
+
+                    </ul>
+
+
+
+                {% endfor %}
+                {#</div>#}
+            </div>
+            </div>
+
+    </div>
+
+{% endblock %}

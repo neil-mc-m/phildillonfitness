@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-primary" color-on-scroll="300">
     <div class="container">
         <div class="navbar-translate">
-            <a class="navbar-brand" href="#">Signed in as: {{ auth_user().email }}</a>
+            <a class="navbar-brand" href="#">Phil Dillon Fitness</a>
             <button class="navbar-toggler navbar-toggler-right navbar-burger" type="button" data-toggle="collapse" data-target="#navbarToggler"
                     aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-bar"></span>
@@ -15,7 +15,20 @@
                     <a href="/admin/dashboard" class="nav-link">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a href="/admin/camps" class="nav-link">View Camps</a>
+                    {#<a href="/admin/camps" class="nav-link">View Camps</a>#}
+                    <div class="dropdown">
+                        <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            Camps
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <li class="dropdown-header">Camps</li>
+                            <a class="dropdown-item" href="{{ route('camps.index') }}">View
+                                Camps</a>
+                            <a class="dropdown-item" href="{{ route('camps.create') }}">Create
+                                Camp</a>
+                        </ul>
+                    </div>
                 </li>
                 <li class="nav-item">
                     <a href="/logout" class="nav-link">Logout</a>
