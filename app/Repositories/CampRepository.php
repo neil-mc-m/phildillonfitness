@@ -28,12 +28,7 @@ class CampRepository implements CampRepositoryInterface
 
     public function create($data)
     {
-        $camp = new $this->camp;
-        $camp->name = $data['name'];
-        $camp->duration = $data['duration'];
-        $camp->price = $data['price'];
-        $camp->feature_1 = $data['feature_1'];
-        $camp->feature_2 = $data['feature_2'];
+        $camp = $this->camp->fill($data);
         $camp->save();
 
         return $camp;
@@ -46,11 +41,17 @@ class CampRepository implements CampRepositoryInterface
 
     public function update($data, $id)
     {
-        return $this->camp->find($id)->update($data);
+        $camp = $this->camp->find($id)->update($data);
+
+        return $camp;
     }
 
     public function delete($id)
     {
         return $this->camp->find($id)->delete();
+    }
+    public function count()
+    {
+        return $this->camp->count();
     }
 }

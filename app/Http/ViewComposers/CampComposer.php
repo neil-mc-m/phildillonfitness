@@ -8,6 +8,8 @@
 
 namespace App\Http\ViewComposers;
 
+use App\Repositories\CampRepository;
+use Illuminate\View\View;
 
 class CampComposer
 {
@@ -20,6 +22,6 @@ class CampComposer
 
     public function compose(View $view)
     {
-        $view->with('camp', $this->camps->find(1));
+        $view->with('count', $this->camps->count());
     }
 }

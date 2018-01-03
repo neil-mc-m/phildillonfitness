@@ -50,7 +50,8 @@ class CampController extends Controller
             'duration' => $request->input('duration'),
             'price' => $request->input('price'),
             'feature_1' => $request->input('feature_1'),
-            'feature_2' => $request->input('feature_2')
+            'feature_2' => $request->input('feature_2'),
+            'active' => $request->input('active')
         );
         try {
             $camp = $this->camp->create($data);
@@ -98,18 +99,21 @@ class CampController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $camp = $this->camp->findById($id);
-        $camp->name = $request->input('name');
-        $camp->duration = $request->input('duration');
-        $camp->price = $request->input('price');
-        $camp->feature_1 = $request->input('feature_1');
-        $camp->feature_2 = $request->input('feature_2');
-        $camp->save();
-        // get the updated camp from the db
-        $newCamp = Camp::find($id);
-        // redirect with message
-        $request->session()->flash('status', 'Task was successful!');
-        return view('admin.show_camp', ['camp' => $newCamp]);
+        $data = array(
+            'name' => $request->input('name'),
+            'duration' => $request->input('duration'),
+            'price' => $request->input('price'),
+            'feature_1' => $request->input('feature_1'),
+            'feature_2' => $request->input('feature_2'),
+            'active' => $request->input('active')
+        );
+        try {
+            $camp = $this->camp->update($data, $id);
+            $request->session()->flash('status', 'Task was successful!');
+            return Redirect::to('/admin/camps');
+        } catch (\Exception $e) {
+            return Redirect::to('/admin/camps')->with(['message' => $e->getMessage()]);
+        }
     }
 
     /**

@@ -17,7 +17,7 @@ class AppServiceProvider extends ServiceProvider
     {
         // Using class based composers...
         View::composer(
-            'camp', 'App\Http\ViewComposers\CampComposer'
+            'admin.dashboard', 'App\Http\ViewComposers\CampComposer'
         );
         Schema::defaultStringLength(191);
     }

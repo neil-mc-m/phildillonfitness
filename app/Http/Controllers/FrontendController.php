@@ -27,7 +27,7 @@ class FrontendController extends Controller
     {
         return view('hello',
             [
-                'camp' => Camp::findOrFail('1')
+                'camp' => Camp::where('active', '=', 1)->firstOrFail()
             ]
         );
     }
@@ -41,7 +41,7 @@ class FrontendController extends Controller
     {
         return view('pricing',
             array(
-                'camp' => Camp::findOrFail('1')
+                'camp' => Camp::where('active', '=', 1)->firstOrFail()
             ));
     }
 
