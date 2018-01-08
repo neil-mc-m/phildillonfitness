@@ -5,65 +5,20 @@
 {% block content %}
 
     <div>
-        <div class="container m-4">
+        <div class="container mt-3">
             <div class="row">
-                <h6>Camps</h6>
-            </div>
-            <div class="row">
-                <p>Your currently active camp is highlighted in blue.</p>
-            </div>
-
-            {% if session_get('status') %}
-                <div class="alert alert-success" role="alert">
-                    {{ session_get('status') }}
+                <div class="col-md-4">
+                    <h6>Camps</h6>
+                    <p>Your currently active camp is highlighted in blue.</p>
+                    {% if session_get('status') %}
+                        <div class="alert alert-success" role="alert">
+                            {{ session_get('status') }}
+                        </div>
+                    {% endif %}
                 </div>
-            {% endif %}
-        </div>
-<div class="container">
-
-            {% for camp in camps %}
-                {#<div class="row">#}
-                {#<div class="col-4">#}
-                {#<div class="list-group" id="list-tab" role="tablist">#}
-                {#<a class="list-group-item list-group-item-action active"#}
-                {#id="list-home-list" data-toggle="list" href="#list-name" role="tab"#}
-                {#aria-controls="home">Name</a>#}
-                {#<a class="list-group-item list-group-item-action" id="list-profile-list"#}
-                {#data-toggle="list" href="#list-duration" role="tab"#}
-                {#aria-controls="profile">Duration</a>#}
-                {#<a class="list-group-item list-group-item-action"#}
-                {#id="list-messages-list" data-toggle="list" href="#list-price"#}
-                {#role="tab" aria-controls="messages">Price</a>#}
-                {#<a class="list-group-item list-group-item-action"#}
-                {#id="list-settings-list" data-toggle="list" href="#list-feature_1"#}
-                {#role="tab" aria-controls="settings">Feature_1</a>#}
-                {#<a class="list-group-item list-group-item-action"#}
-                {#id="list-settings-list" data-toggle="list" href="#list-feature_2"#}
-                {#role="tab" aria-controls="settings">Feature_1</a>#}
-                {#</div>#}
-                {#</div>#}
-                {#<div class="col-8">#}
-                {#<div class="tab-content" id="nav-tabContent">#}
-                {#<div class="tab-pane fade show active" id="list-name" role="tabpanel"#}
-                {#aria-labelledby="list-home-list">{{ camp.name }}#}
-                {#</div>#}
-                {#<div class="tab-pane fade" id="list-duration" role="tabpanel"#}
-                {#aria-labelledby="list-profile-list">{{ camp.duration }}#}
-                {#</div>#}
-                {#<div class="tab-pane fade" id="list-price" role="tabpanel"#}
-                {#aria-labelledby="list-messages-list">{{ camp.price }}#}
-                {#</div>#}
-                {#<div class="tab-pane fade" id="list-feature_1" role="tabpanel"#}
-                {#aria-labelledby="list-settings-list">{{ camp.feature_1 }}#}
-                {#</div>#}
-                {#<div class="tab-pane fade" id="list-feature_2" role="tabpanel"#}
-                {#aria-labelledby="list-settings-list">{{ camp.feature_2 }}#}
-                {#</div>#}
-                {#</div>#}
-                {#</div>#}
-                {#</div>#}
-                <div class="row mt-2 justify-content-center">
-                    <ul class="list-group col-md-8">
+                {% for camp in camps %}
+                    <div class="col-md-8">
+                    <ul class="list-group">
                         <li class="list-group-item {% if camp.active == 1 %}active{% endif %}">
                             <h5>{{ camp.name }}</h5>
                         </li>
@@ -71,12 +26,12 @@
                         <li class="list-group-item">price : {{ camp.price }}</li>
                         <li class="list-group-item">feature 1 : {{ camp.feature_1 }}</li>
                         <li class="list-group-item">feature 2 :{{ camp.feature_2 }}</li>
-                        <li class="list-group-item">active : {% if camp.active == 1 %}yes{%
-                elseif camp.active == 0 %}no{% endif %}</li>
+                        <li class="list-group-item">active
+                            : {% if camp.active == 1 %}yes{% elseif camp.active == 0 %}no{% endif %}</li>
                         <li class="list-group-item d-flex justify-content-between
                 align-items-center">
                             <a class="btn btn-outline-info" href="{{ route('camps.edit' ,
-                                [camp.id] ) }}">Edit</a>
+                            [camp.id] ) }}">Edit</a>
                             {{ form_open({ route: ['camps.destroy', camp.id], 'method':
                                 'DELETE'}) }}
                             {{ form_submit('delete', {'class': 'btn btn-outline-danger'}) }}
@@ -84,12 +39,13 @@
                         </li>
 
                     </ul>
-                </div>
-            {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
 
-            {{ message }}
 
         </div>
     </div>
+
 
 {% endblock %}

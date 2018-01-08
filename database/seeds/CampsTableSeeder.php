@@ -20,7 +20,8 @@ class CampsTableSeeder extends Seeder
             'duration' => '8',
             'price' => '450',
             'feature_1' => '2 x personal training sessions per week',
-            'feature_2' => 'guidance on additional training for the week'
+            'feature_2' => 'guidance on additional training for the week',
+            'active' => '1'
         ]);
     }
 }

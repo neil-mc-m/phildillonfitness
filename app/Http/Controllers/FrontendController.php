@@ -25,9 +25,11 @@ class FrontendController extends Controller
      */
     public function home()
     {
+        $camp = Camp::where('active', '=', 1)
+            ->first();
         return view('hello',
             [
-                'camp' => Camp::where('active', '=', 1)->firstOrFail()
+                'camp' => $camp
             ]
         );
     }

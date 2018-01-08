@@ -28,7 +28,7 @@ module.exports = function(grunt) {
                     ]
                 },
                 options: {
-                    proxy: "http://localhost:8888",
+                    proxy: "http://127.0.0.1:8000",
                 }
             }
         }

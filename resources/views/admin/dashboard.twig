@@ -5,13 +5,13 @@
 {% block content %}
 
     <div>
-        <div class="container m-4">
+        <div class="container mt-3">
             <div class="row">
-                <h6>Welcome {{ auth_user().email }}</h6>
-            </div>
-            <div class="row">
-                <h6>Content Management Sections</h6>
-                <div class="col-md-12">
+                <div class="col-md-4">
+                    <h6>Welcome {{ auth_user().email }}</h6>
+                    <p>Content Management Sections</p>
+                </div>
+                <div class="col-md-8">
 
                     <div class="list-group">
                         <a href="{{ route('camps.index') }}" class="list-group-item
@@ -25,6 +25,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 
