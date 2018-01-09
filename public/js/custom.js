@@ -14,6 +14,7 @@ $(document).ready(function(){
                 data: formSerialize,
 
                 success: function (response) {
+                    $('#contactFormModal').modal('hide');
                     $('#confirmModal').html(response);
                     $('#confirmModal').modal('show');
                     console.log(response);

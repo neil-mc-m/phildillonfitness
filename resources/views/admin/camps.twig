@@ -16,9 +16,10 @@
                         </div>
                     {% endif %}
                 </div>
+                <div class="col-md-8">
                 {% for camp in camps %}
-                    <div class="col-md-8">
-                    <ul class="list-group">
+
+                    <ul class="list-group pb-3">
                         <li class="list-group-item {% if camp.active == 1 %}active{% endif %}">
                             <h5>{{ camp.name }}</h5>
                         </li>
@@ -39,8 +40,9 @@
                         </li>
 
                     </ul>
-                    </div>
+
                 {% endfor %}
+                </div>
             </div>
 
 

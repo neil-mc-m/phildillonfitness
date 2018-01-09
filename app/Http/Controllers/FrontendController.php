@@ -43,7 +43,7 @@ class FrontendController extends Controller
     {
         return view('pricing',
             array(
-                'camp' => Camp::where('active', '=', 1)->firstOrFail()
+                'camp' => Camp::where('active', '=', 1)->first()
             ));
     }
 
@@ -74,9 +74,9 @@ class FrontendController extends Controller
         );
         try {
             Mail::to(env('MAIL_TO'))->send(new BookingForm($bookingFormData));
-            return view('partials.confirm_email');
+            return view('partials.confirm_email')->with(['message' => 'Success. Ill get back to you as soon as i can.']);
         } catch (\Exception $e) {
-            return view('contact')->with(['sent' => false]);
+            return view('partials.confirm_email')->with(['message' => 'Oops, that didnt send']);
         }
     }
 
