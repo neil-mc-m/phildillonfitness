@@ -1,11 +1,12 @@
 {% extends 'base.twig' %}
-{% block title %}Personal Trainer ~ Phil Dillon ~ Home{% endblock %}
-{% block description %}Personal Trainer based out of Northwood Gym. Prices from 30euro per session and free 30min consultation. {% endblock %}
+{% block title %}Personal Trainer, Dublin ~ Phil Dillon ~ Home{% endblock %}
+{% block description %}Personal Trainer based out of Northwood Gym, Dublin. Prices from 30euro per
+    session and free 30min consultation. {% endblock %}
 
 {% block content %}
     {% include 'navbar.twig' %}
 
-    <div class="page-header page-header-lg" style="background-image: url('/img/phil_2.jpg');">
+    <div class="page-header" style="background-image: url('/img/phil_2.jpg');">
         <div class="filter"></div>
         <div class="container">
             <div class="motto text-center">
@@ -17,11 +18,11 @@
             </div>
         </div>
     </div><!-- end page-header -->
-    <div class="main">
+    <div class="main text-center">
         <div class="alert alert-danger">
             <div class="container">
                 <div class="row">
-                    <div class="col-12 col-md-8 p-">
+                    <div class="col-12 col-md-8 col-xs-12 p-2">
                         <h6>{{ camp.name }} camp</h6>
                         <p>
                             {{ camp.duration }} week camp only &euro;{{ camp.price }}!<br>
