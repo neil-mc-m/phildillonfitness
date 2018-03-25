@@ -4,13 +4,17 @@
 
 {% block content %}
     <div>
-        <div class="container m-4">
+        <div class="container mt-3">
             <div class="row">
-                <h6>You can create a new camp here.</h6>
-            </div>
+                <div class="col-md-4">
+                    <h6>Create a new Camp</h6>
+
+                <p>Dont forget to activate your chosen camp.</p>
+                </div>
 
 
 
+        <div class="col-md-8">
 
             {{ form_open({ route: ['camps.store'], 'method': 'POST'}) }}
 
@@ -22,8 +26,7 @@
                         'class': 'form-control',
                         'placeholder': 'camp name',
                         'required': 'true'
-                    })
-                    }}
+                    }) }}
                 </div>
                 <div class="form-group col-md-12">
                     {{ form_label('duration', 'duration') }}
@@ -48,19 +51,18 @@
                 <div class="form-group col-md-12">
                     {{ form_label('active', 'active') }}
                     {{ form_text('active', null,
-                        {
-                            'class': 'form-control',
-                            'placeholder': '1 or 0',
-                            'required': 'true'
-                        })
-                    }}
+                    {
+                        'class': 'form-control',
+                        'placeholder': '1 or 0',
+                        'required': 'true'
+                    }) }}
                 </div>
                 {{ form_submit('save', {'class': 'btn btn-danger'}) }}
                 {{ form_close() }}
 
             </div>
-
         </div>
+    </div>
 
 
     </div>
