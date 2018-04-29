@@ -41,8 +41,8 @@
 # https://wiki.apache.org/httpd/RewriteHTTPToHTTPS
 
 
-    RewriteEngine On
-    RewriteCond %{HTTPS} !=on
-    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+#    RewriteEngine On
+#   RewriteCond %{HTTPS} !=on
+#   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
 </IfModule>

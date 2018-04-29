@@ -9,10 +9,12 @@ body, html {
     opacity: 1;
     cursor: pointer;
 }
+
 #mapid {
     height: 30em;
     margin-bottom: 3em;
 }
+
 /* facebook share styles - https://sharingbuttons.io */
 .resp-sharing-button__link,
 .resp-sharing-button__icon {
@@ -29,7 +31,7 @@ body, html {
     border-radius: 5px;
     transition: 25ms ease-out;
     padding: 0.5em 0.75em;
-    font-family: Helvetica Neue,Helvetica,Arial,sans-serif
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif
 }
 
 .resp-sharing-button__icon svg {
@@ -140,7 +142,10 @@ body, html {
 .resp-sharing-button--hackernews {
     background-color: #FF6600
 }
-.resp-sharing-button--hackernews:hover, .resp-sharing-button--hackernews:focus {   background-color: #FB6200 }
+
+.resp-sharing-button--hackernews:hover, .resp-sharing-button--hackernews:focus {
+    background-color: #FB6200
+}
 
 .resp-sharing-button--vk {
     background-color: #507299
@@ -165,16 +170,20 @@ body, html {
     background-color: #1b1e21;
     color: white;
 }
+
 .footer nav > ul > li {
     padding: 2px;
     margin: 2px;
 }
+
 .card .card-footer {
-    background: rgba(0,0,0,.06);
+    background: rgba(0, 0, 0, .06);
 }
+
 .footer nav > ul > li > a:not(.btn) {
     color: #51bcda;
 }
+
 .navbar .nav-link > i {
     position: inherit;
     top: 2px;
@@ -183,10 +192,25 @@ body, html {
 .carousel {
     background-color: rgba(255, 255, 255, 0.8);;
 }
+
 .carousel-indicators > li {
     background-color: black;
 }
-@media(max-width:768px) {
+
+
+#camp-alert {
+    height: 45vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(10, 10, 80, 00.7)),
+    url('/img/dylan-nolte-548566-unsplash.jpg');
+    background-size: cover;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+@media (max-width: 768px) {
     .row.flex {
         display: inherit;
     }
