@@ -15,7 +15,8 @@ class DatabaseSeeder extends Seeder
             [
                 PriceTableSeeder::class,
                 CampsTableSeeder::class,
-                UsersTableSeeder::class
+                UsersTableSeeder::class,
+                PriceTableSeeder::class
             ]);
     }
 }

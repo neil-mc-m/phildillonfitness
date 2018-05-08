@@ -2,6 +2,8 @@
 /public/hot
 /public/storage
 /public/node_modules
+/public/.htaccess
+/public/package.json
 /storage/*.key
 /vendor
 /.idea

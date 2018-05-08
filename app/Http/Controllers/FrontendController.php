@@ -11,6 +11,7 @@ namespace App\Http\Controllers;
 use App\Camp;
 use App\Mail\BookingForm;
 use App\Mail\CallBackForm;
+use App\Price;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 
@@ -43,7 +44,8 @@ class FrontendController extends Controller
     {
         return view('pricing',
             array(
-                'camp' => Camp::where('active', '=', 1)->first()
+                'camp' => Camp::where('active', '=', 1)->first(),
+                'price' => Price::find(1)
             ));
     }
 

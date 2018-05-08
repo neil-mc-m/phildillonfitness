@@ -1,9 +1,9 @@
 {% extends 'base.twig' %}
 
-{% block title %}Personal Trainer, Dublin ~ Phil Dillon ~ Check my prices{% endblock %}
+{% block title %}Check my prices{% endblock %}
 {% block description %}Results based personal training. Prices from 30euro per session and free
     30min consultation. Personal Trainer based out of Northwood
-    Gym, Dublin.
+    Gym, Dublin. Emphasing nutrition and long-term fitness over diets.
 {% endblock %}
 
 
@@ -34,10 +34,6 @@
                     <div class="col-md-8 ml-auto mr-auto">
                         <h2 class="title">Pricing</h2>
                     </div>
-                    {#<h5 class="description p-3">#}
-                    {#I have a flexible price structure for all my classes -#}
-                    {#</h5>#}
-
 
                     <div class="col-12 col-md-6">
                         <p class="mt-3">
@@ -64,7 +60,7 @@
                     <div class="card">
                         <div class="card-img-top bg-primary p-2">
 
-                            <h4 class="card-title">Solo</h4>
+                            <h4 class="card-title">{{ price.type }}</h4>
 
                         </div>
                         <div class="card-body">
@@ -77,7 +73,7 @@
                             </div>
                         </div>
                         <div class="card-footer text-muted">
-                            &euro;35 per session or &euro;180 for 6
+                            &euro;{{ price.price }} per session or &euro;{{ price.bulk }}
                         </div>
                     </div>
 

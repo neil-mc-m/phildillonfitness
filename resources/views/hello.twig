@@ -1,7 +1,7 @@
 {% extends 'base.twig' %}
-{% block title %}Personal Trainer, Dublin ~ Phil Dillon ~ Home{% endblock %}
-{% block description %}Personal Trainer based out of Northwood Gym, Dublin. Prices from 30euro per
-    session and free 30min consultation. {% endblock %}
+{% block title %}Home{% endblock %}
+{% block description %}Personal Trainer based out of Northwood Gym, Dublin. Prices from 30 euro per
+    session and free 30min consultation. Emphasing nutrition and long-term fitness over diets.{% endblock %}
 
 {% block content %}
     {% include 'navbar.twig' %}
@@ -16,29 +16,13 @@
                 <h6>Home</h6>
                 <p>Personal training with an emphasis on nutrition and long-term fitness.</p>
                 <p>Get your free 30min fitness consultation</p>
-                <a href="#contact" class="btn btn-outline-neutral btn-round mt-3">Book Now</a>
+                <a href="#welcome" class="btn btn-outline-neutral btn-round mt-3">Welcome</a>
             </div>
         </div>
     </div><!-- end page-header -->
     <div class="main text-center">
-        <div class="alert alert-danger">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-md-8 col-xs-12 p-2">
-                        <h6>{{ camp.name }} camp</h6>
-                        <p>
-                            {{ camp.duration }} week camp only &euro;{{ camp.price }}!<br>
-                            {{ camp.feature_1 }}<br>
-                            {{ camp.feature_2 }}
-                        </p>
-                    </div>
-                    <div class="col-12 col-md-4 p-3">
-                        <a href="/pricing" class="btn btn-default">More Details</a>
-                    </div>
-                </div>
-            </div>
-        </div><!-- end alert -->
-        <div class="section">
+
+        <div id="welcome" class="section">
             <h2 class="title text-center">Welcome</h2>
             <div class="container">
                 <div class="row">
@@ -57,13 +41,7 @@
                     </p>
                     </div>
                 </div>
-                <div class="row p-4">
-                    <div class="col text-center">
 
-                        <a href="#aboutMe" class="btn btn-dark">About Me</a>
-                    </div>
-
-                </div>
                 <div class="row p-4">
                     <div class="col-md-4 m-3 m-md-0">
                         <div class="info">
@@ -97,16 +75,39 @@
                             <div class="description">
                                 <h4 class="info-title">Results</h4>
                                 <p>I monitor your fitness and provide measurements for body weight and body fat every 2
-                                    weeks.</p>
-                                {#<a href="#pkp" class="btn btn-link btn-danger">See more</a>#}
+                                    weeks.
+                                </p>
                             </div>
                         </div>
                     </div>
 
                 </div>
+                <div class="row p-4">
+                    <div class="col text-center">
+
+                        <a href="#aboutMe" class="btn btn-dark">About Me</a>
+                    </div>
+
+                </div>
             </div><!-- end container -->
         </div><!-- end section -->
-
+        <div id="camp-alert">
+            <div class="container">
+                <div class="row camp-text">
+                    <div class="col-12 col-md-8 col-xs-12 p-2">
+                        <h6>{{ camp.name }} camp</h6>
+                        <p>
+                            {{ camp.duration }} week camp only &euro;{{ camp.price }}!<br>
+                            {{ camp.feature_1 }}<br>
+                            {{ camp.feature_2 }}
+                        </p>
+                    </div>
+                    <div class="col-12 col-md-4 p-3">
+                        <a href="/pricing" class="btn btn-default">More Details</a>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end alert -->
 
         <div id="aboutMe" class="section section-dark text-center">
             <div class="container">
