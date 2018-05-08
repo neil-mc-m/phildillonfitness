@@ -11,12 +11,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(
-            [
-                PriceTableSeeder::class,
-                CampsTableSeeder::class,
-                UsersTableSeeder::class,
-                PriceTableSeeder::class
-            ]);
+        $this->call(array(
+            CampsTableSeeder::class,
+            UsersTableSeeder::class,
+            PriceTableSeeder::class
+            )
+        );
     }
 }

@@ -10,9 +10,9 @@ namespace App\Repositories;
 
 
 use App\Camp;
-use App\Contracts\CampRepositoryInterface;
+use App\Contracts\RepositoryInterface;
 
-class CampRepository implements CampRepositoryInterface
+class CampRepository implements RepositoryInterface
 {
     protected $camp;
 
