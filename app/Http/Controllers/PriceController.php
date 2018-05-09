@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Price;
 use App\Repositories\PriceRepository;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class PriceController extends Controller
 {
@@ -41,7 +42,7 @@ class PriceController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.price_create');
     }
 
     /**
@@ -52,7 +53,22 @@ class PriceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = array(
+            'type' => $request->input('type'),
+            'price' => $request->input('price'),
+            'bulk' => $request->input('bulk')
+        );
+        try {
+            $this->priceRepository->create($data);
+            $request->session()->flash('status', 'Task was successful!');
+            return Redirect::to('/admin/prices');
+        } catch (\Exception $e)
+        {
+            return Redirect::to('/admin/prices')->with(array(
+                'message' => $e->getMessage()
+                )
+            );
+        }
     }
 
     /**
@@ -95,8 +111,19 @@ class PriceController extends Controller
      * @param  \App\Price  $price
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Price $price)
+    public function destroy(Request $request, Price $price)
     {
-        //
+        try {
+            $price->delete();
+            $request->session()->flash('status', 'Task was successful!');
+            return Redirect::to('/admin/prices');
+        } catch (\Exception $e)
+        {
+            return Redirect::to('/admin/prices')->with(array(
+                    'message' => $e->getMessage()
+                )
+            );
+        }
+
     }
 }

@@ -45,7 +45,8 @@ class FrontendController extends Controller
         return view('pricing',
             array(
                 'camp' => Camp::where('active', '=', 1)->first(),
-                'price' => Price::find(1)
+                'price' => Price::where('type', '=', 'solo')->first(),
+                'group_price' => Price::where('type', '=', 'group')->first()
             ));
     }
 

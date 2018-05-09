@@ -80,7 +80,7 @@
                     <div class="card">
                         <div class="card-img-top bg-danger p-2">
 
-                            <h4 class="card-title">Group</h4>
+                            <h4 class="card-title">{{ group_price.type }}</h4>
                         </div>
                         <div class="card-body">
                             <div class="description">
@@ -92,7 +92,7 @@
 
                         </div>
                         <div class="card-footer text-muted">
-                            &euro;40 per session or &euro;240 for 6
+                            &euro;{{ group_price.price }} per session or &euro;{{ group_price.bulk }}
                         </div>
                     </div>
 

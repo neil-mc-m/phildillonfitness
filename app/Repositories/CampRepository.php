@@ -26,6 +26,10 @@ class CampRepository implements RepositoryInterface
         return $this->camp->all();
     }
 
+    /**
+     * @param $data
+     * @return $this
+     */
     public function create($data)
     {
         $camp = $this->camp->fill($data);
