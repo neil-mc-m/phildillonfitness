@@ -29,6 +29,9 @@ Route::get('/admin/dashboard', function() {
 Route::prefix('admin')->group(function () {
     Route::resource('camps', 'CampController');
 });
+Route::prefix('admin')->group(function () {
+    Route::resource('prices', 'PriceController');
+});
 
 
 

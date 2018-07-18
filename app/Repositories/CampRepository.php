@@ -10,9 +10,9 @@ namespace App\Repositories;
 
 
 use App\Camp;
-use App\Contracts\CampRepositoryInterface;
+use App\Contracts\RepositoryInterface;
 
-class CampRepository implements CampRepositoryInterface
+class CampRepository implements RepositoryInterface
 {
     protected $camp;
 
@@ -26,6 +26,10 @@ class CampRepository implements CampRepositoryInterface
         return $this->camp->all();
     }
 
+    /**
+     * @param $data
+     * @return $this
+     */
     public function create($data)
     {
         $camp = $this->camp->fill($data);

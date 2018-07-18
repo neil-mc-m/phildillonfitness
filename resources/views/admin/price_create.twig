@@ -1,0 +1,53 @@
+{% extends 'admin/admin.twig' %}
+{% block title %} Dashboard {% endblock %}
+{% block description %}{% endblock %}
+
+{% block content %}
+    <div>
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-md-4">
+                <h6>Create a new Price</h6>
+
+                <p>Dont forget to activate your chosen price.</p>
+            </div>
+
+
+
+            <div class="col-md-8">
+
+                {{ form_open({ route: ['prices.store'], 'method': 'POST'}) }}
+
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        {{ form_label('type', 'type') }}
+                        {{ form_text('type', null,
+                            {
+                                'class': 'form-control',
+                                'placeholder': 'price type eg.solo',
+                                'required': 'true'
+                            }) }}
+                    </div>
+                    <div class="form-group col-md-12">
+                        {{ form_label('bulk', 'bulk') }}
+                        {{ form_text('bulk', null, {'class': 'form-control', 'placeholder': '8',
+                            'required': 'true'}) }}
+                    </div>
+                    <div class="form-group col-md-12">
+                        {{ form_label('price', 'price') }}
+                        {{ form_number('price', null, {'class': 'form-control', 'placeholder': '450',
+                            'required': 'true'}) }}
+                    </div>
+
+                    {{ form_submit('save', {'class': 'btn btn-danger'}) }}
+                    {{ form_close() }}
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+{% endblock %}

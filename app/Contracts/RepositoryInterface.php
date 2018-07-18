@@ -9,7 +9,7 @@
 namespace App\Contracts;
 
 
-interface CampRepositoryInterface
+interface RepositoryInterface
 {
     public function findAll();
 
