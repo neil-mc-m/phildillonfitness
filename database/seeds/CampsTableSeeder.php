@@ -16,11 +16,11 @@ class CampsTableSeeder extends Seeder
     public function run()
     {
         DB::table('camps')->insert([
-            'name' => 'get fit for christmas',
+            'name' => 'get fit for the new year',
             'duration' => '8',
-            'price' => '450',
-            'feature_1' => '2 x personal training sessions per week',
-            'feature_2' => 'guidance on additional training for the week',
+            'price' => '450 (payable in 2 installments)',
+            'feature_1' => 'weekly body fat/weight measurments',
+            'feature_2' => 'weekly guidance and nutritional advice',
             'active' => '1'
         ]);
     }
