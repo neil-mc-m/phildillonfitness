@@ -18,8 +18,8 @@ class CampsTableSeeder extends Seeder
         DB::table('camps')->insert([
             'name' => 'get fit for the new year',
             'duration' => '8',
-            'price' => '450 (payable in 2 installments)',
-            'feature_1' => 'weekly body fat/weight measurments',
+            'price' => '450 payable in 2 installments',
+            'feature_1' => 'weekly body fat and weight measurements',
             'feature_2' => 'weekly guidance and nutritional advice',
             'active' => '1'
         ]);
