@@ -19,6 +19,9 @@ class AppServiceProvider extends ServiceProvider
         View::composer(
             'admin.dashboard', 'App\Http\ViewComposers\CampComposer'
         );
+        View::composer(
+            'admin.dashboard', 'App\Http\ViewComposers\PriceComposer'
+        );
         Schema::defaultStringLength(191);
     }
 

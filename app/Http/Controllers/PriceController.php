@@ -124,6 +124,5 @@ class PriceController extends Controller
                 )
             );
         }
-
     }
 }
